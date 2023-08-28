@@ -1,5 +1,5 @@
 import { Outlet, Router, Route, RootRoute } from '@tanstack/react-router';
-import { Navbar, Login } from '@/components';
+import { Navbar, SignIn } from '@/components';
 import App from '@/App';
 
 const rootRoute = new RootRoute({
@@ -19,15 +19,15 @@ const indexRoute = new Route({
   }
 });
 
-const loginRoute = new Route({
+const signInRoute = new Route({
   getParentRoute: () => rootRoute,
-  path: '/login',
-  component: function login() {
-    return <Login />;
+  path: '/sign-in',
+  component: function auth() {
+    return <SignIn />;
   }
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, loginRoute]);
+const routeTree = rootRoute.addChildren([indexRoute, signInRoute]);
 
 export const router = new Router({ routeTree });
 

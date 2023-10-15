@@ -1,12 +1,12 @@
-import { TodoAddProps } from '@/types/todo';
+import { TodoAddItemProps } from '@/types/todo';
 
-export const TodoAdd = ({
+export function TodoAddItem({
   addTodo,
   handleChange,
   handleKeyPress,
   isDisabled,
-  name
-}: TodoAddProps) => {
+  task
+}: TodoAddItemProps) {
   return (
     <div className="mt-28 flex border-b-2  border-black">
       <input
@@ -16,7 +16,7 @@ export const TodoAdd = ({
         autoFocus
         onChange={handleChange}
         onKeyDown={handleKeyPress}
-        value={name}
+        value={task}
       />
       <button
         disabled={isDisabled}
@@ -29,6 +29,4 @@ export const TodoAdd = ({
       </button>
     </div>
   );
-};
-
-export default TodoAdd;
+}

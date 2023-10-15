@@ -1,12 +1,12 @@
-import { TodoItemEditProps } from '@/types/todo';
+import { TodoListItemEditProps } from '@/types/todo';
 
-const TodoItemEdit = ({
+export function TodoListItemEdit({
   editingTodo,
   setEditingTodo,
   handleKeyPress,
   saveTodo,
   isDisabled
-}: TodoItemEditProps) => {
+}: TodoListItemEditProps) {
   const cancelEdit = () => {
     setEditingTodo(null);
   };
@@ -36,6 +36,4 @@ const TodoItemEdit = ({
       </div>
     </>
   );
-};
-
-export default TodoItemEdit;
+}

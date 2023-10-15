@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-function useEnterKey(
+export function useEnterKey(
   callback: () => void,
   isDisabled: boolean
 ): (e: React.KeyboardEvent<HTMLInputElement>) => void {
@@ -13,5 +13,3 @@ function useEnterKey(
     [callback, isDisabled]
   );
 }
-
-export default useEnterKey;
